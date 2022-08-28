@@ -1,4 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+// 引入全局样式文件
+import '@/assets/scss/index.scss'
+
+const app = createApp(App)
+app.mount('#app')
