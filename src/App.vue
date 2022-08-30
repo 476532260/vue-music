@@ -1,9 +1,10 @@
 <script setup>
-import Toast from '@/components/toast/toast.vue'
+import MHeader from '@/components/header/m-header.vue'
 </script>
 
 <template>
-  <toast></toast>
+  <m-header></m-header>
+  <router-view></router-view>
 </template>
 
 <style scoped>
