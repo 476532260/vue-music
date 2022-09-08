@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import Swiper from './swiper.vue'
 import RecIcons from './discover-icons.vue'
 import RecPlaylist from './rec-playlist.vue'
@@ -7,6 +8,7 @@ import RecMv from './rec-mv.vue'
 import Scroll from '@/components/scroll/scroll.vue'
 import { getBanner, getRecPlaylist, getRecMv } from '@/api/discover'
 
+const router = useRouter()
 // 轮播图
 const banners = ref([])
 // 推荐歌单
@@ -40,6 +42,10 @@ onMounted(() => {
     }
   })
 })
+
+const getMorePlaylist = () => {
+  router.push('/playlist')
+}
 </script>
 
 <template>
@@ -56,6 +62,7 @@ onMounted(() => {
           <rec-playlist
             v-if="personalizeds.length"
             :personalizeds="personalizeds"
+            @link="getMorePlaylist"
           ></rec-playlist>
           <rec-mv :mvs="mvFirst"></rec-mv>
         </div>

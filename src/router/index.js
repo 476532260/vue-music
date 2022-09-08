@@ -10,13 +10,13 @@ const PlaylistDetail = () => import('@/views/playlist/detail.vue'/* webpackChunk
 
 const routes = [
   { path: '/', redirect: '/discover' },
-  { path: '/mine', component: Mine },
-  { path: '/discover', component: Discover },
-  { path: '/friends', component: Friends },
-  { path: '/video', component: Video },
-  { path: '/search', component: Search },
-  { path: '/playlist', component: Playlist },
-  { path: '/playlist/detail', component: PlaylistDetail }
+  { path: '/mine', component: Mine, meta: { showHeader: true } },
+  { path: '/discover', component: Discover, meta: { showHeader: true } },
+  { path: '/friends', component: Friends, meta: { showHeader: true } },
+  { path: '/video', component: Video, meta: { showHeader: true } },
+  { path: '/search', component: Search, meta: { showHeader: false } },
+  { path: '/playlist', component: Playlist, meta: { showHeader: false } },
+  { path: '/playlist/detail', component: PlaylistDetail, meta: { showHeader: false } }
 ]
 
 const router = createRouter({

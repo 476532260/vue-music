@@ -3,7 +3,7 @@ import { reactive, toRefs, onMounted } from 'vue'
 
 const state = reactive({
   visible: false,
-  text: '',
+  text: 'eee',
   time: ''
 })
 
@@ -24,15 +24,23 @@ onMounted(() => {
 <template>
   <transition name="fade">
     <div class="toast">
-      <div class="toast-tip">
-        <span class="toast-icon"></span>
-        <div class="toast-text">{{ text }}</div>
-      </div>
+      <span class="icon"></span>
+      <div class="text">{{ text }}</div>
     </div>
   </transition>
 </template>
 
 <style lang="scss" scoped>
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  color: #fff;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.4s ease;

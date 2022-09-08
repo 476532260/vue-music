@@ -30,6 +30,11 @@ onMounted(() => {
 onUnmounted(() => {
   scroll.value.destroy()
 })
+
+const emits = defineEmits(['link'])
+const more = () => {
+  emits('link')
+}
 </script>
 
 <template>
@@ -37,7 +42,7 @@ onUnmounted(() => {
     <card>
       <div class="top">
         <h2 class="title">推荐歌单</h2>
-        <span class="more">查看更多</span>
+        <span class="more" @click="more">查看更多</span>
       </div>
       <div class="scroll-wrapper" ref="scrollRef">
         <div class="scroll-content" ref="contentRef">
